@@ -76,20 +76,19 @@ const moreQuestions = {
 //Assuming adding an engineer as a team member is chosen as a choice
 // Array of questions for engineer
 const engineerQuestions = [
-
-{
+ {
     // name of engineer
     type: 'input',
     name: 'engineerName',
     message: 'What is the engineers name?',
-},
-{
+  },
+ {
     // Give input to engineer's ID
     type: 'input',
     name: 'engineerId',
     message: 'what is the engineers id?',
-},
-{
+ },
+ {
     // Inputs for engineer
     type: 'input',
     name: 'engineer email',
@@ -100,7 +99,13 @@ const engineerQuestions = [
 
         }
     }
-},
+ },
+ {
+    // Inputs for engineer's Github username
+    type: 'input',
+    name: 'github',
+    message: 'What is github usename of engineer?',
 
-    
-]
+ }
+
+];
