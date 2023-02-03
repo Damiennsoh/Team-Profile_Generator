@@ -1,5 +1,21 @@
 {
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "inquire": "^0.4.8"
+    "clear": "^0.1.0",
+    "inquire": "^0.4.8",
+    "inquirer": "^8.0.0",
+    "jest": "^29.4.1"
   }
 }
