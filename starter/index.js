@@ -75,37 +75,133 @@ const moreQuestions = {
 
 //Assuming adding an engineer as a team member is chosen as a choice
 // Array of questions for engineer
-const engineerQuestions = [
- {
-    // name of engineer
-    type: 'input',
-    name: 'engineerName',
-    message: 'What is the engineers name?',
-  },
- {
-    // Give input to engineer's ID
-    type: 'input',
-    name: 'engineerId',
-    message: 'what is the engineers id?',
- },
- {
-    // Inputs for engineer
-    type: 'input',
-    name: 'engineer email',
-    message: 'What is the email of the engineer?',
-    validate: function(answer){
-        if(answer.length < 2) {
-            return console.log("Email not valid, enter a valid one to proceed.");
+const engineerQuestions =[
+    {
+        //Inputs for engineer's name
+        type: 'input',
+        name: 'engineer',
+        message: 'What is the nanme of the engineer?',
+    },
+    {
+        //Taking inputs for engineer's ID
+        type: 'input',
+        name: 'engineerId',
+        message: 'What is the engineers Id?',
+    },
+    {
+        //Taking inputs for enginner's email
+        type: 'input',
+        name: 'engineerEmail',
+        message: 'What is the email of the engineer?',
+        validate: function(answer){
+            if(answer.length < 1){
+                return console.log("kindly provida a valid email address to prooceed");
 
+            }
+            return true;
         }
-    }
- },
- {
-    // Inputs for engineer's Github username
-    type: 'input',
-    name: 'github',
-    message: 'What is github usename of engineer?',
-
- }
-
+    },
+    {
+        // Engineer's Github username
+        type: 'input',
+        name: 'github',
+        message: 'What is the engineer github username?',
+    },
 ];
+
+// Array of questions for intern
+const internQuestions = [
+    {
+        // Enter intern's name
+        type: 'input',
+        name: 'internName',
+        message: 'What is the name of the intern?',
+    },
+    {
+      type: 'input',
+      name: 'internName',
+      message: 'What is the name of the intern?',  
+    },
+    {
+        // Input for intern's ID
+        type: 'input',
+        name: 'internID',
+        message: 'What is the ID of the intern?',
+    },
+    {
+        // Input for intern's email address
+        type: 'input',
+        name: 'internEmail',
+        message: 'What is the email address of the intern?',
+    },
+    {
+        // Input for intern's school
+        type: 'input',
+        name: 'school',
+        message: 'What is the name of interns school?',
+    }
+];
+
+// Creating a function to link array of questions from teamManager to manager.js file
+function getManagerInfo() {
+    inquirer.prompt(teamManagerQuestions).then((responseManager) => {
+        console.log(responseManager);
+        employees.push(new Manager(
+            responseManager.teamManagerName,
+            responseManager.teamManagerId,
+            responseManager.teamManagerEmail,
+            responseManager.officeNumber
+        ));
+        addEmployees()
+    })
+}
+// Function to call pivot questions & determine whether to add an engineer or intern or finish building the team 
+function addEmployees() {
+    return inquirer.prompt(pivotQuestion).then((response) => {
+        console.log(response);
+
+        if (response.menu === "Add an engineer?") {
+            getEngineerInfo()
+        }
+        else if (response.menu === "Add an intern?") {
+            getInternInfo()
+        }
+        else{
+            console.log('Complete!')
+            fs.writeFile(outputPath,render(employees),(err) => err ? console.log("err") : console.log("Success"))
+        }
+    })
+}
+
+// Function to pass engineer response array to Engineer.js 
+
+function getEngineerInfo() {
+    inquirer.prompt(engineersQuestions).then((responseEngineer) => {
+        console.log(responseEngineer);
+        employees.push(new Engineer(
+            responseEngineer.engineerName,
+            responseEngineer.engineerId,
+            responseEngineer.engineerEmail,
+            responseEngineer.github
+        ));
+        addEmployees()
+    })
+}
+
+// Function to pass intern response array to Engineer.js
+
+function getInternInfo() {
+    inquirer.prompt(internQuestions).then((responseIntern) => {
+        console.log(responseIntern);
+        employees.push(new Intern(
+            responseIntern.internName,
+            responseIntern.internId,
+            responseIntern.internEmail,
+            responseIntern.school
+        ));
+        addEmployees()
+    })
+}
+
+getManagerInfo()
+Footer
