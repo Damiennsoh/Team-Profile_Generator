@@ -155,9 +155,9 @@ function getManagerInfo() {
         addEmployees()
     })
 }
-// Function to call pivot questions & determine whether to add an engineer or intern or finish building the team 
+// Function to call more question to determine whether more team members are to be added or building the team is the choice to be made.
 function addEmployees() {
-    return inquirer.prompt(pivotQuestion).then((response) => {
+    return inquirer.prompt(moreQuestions).then((response) => {
         console.log(response);
 
         if (response.menu === "Add an engineer?") {
