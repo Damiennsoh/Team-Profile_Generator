@@ -118,11 +118,6 @@ const internQuestions = [
         message: 'What is the name of the intern?',
     },
     {
-      type: 'input',
-      name: 'internName',
-      message: 'What is the name of the intern?',  
-    },
-    {
         // Input for intern's ID
         type: 'input',
         name: 'internID',
