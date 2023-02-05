@@ -69,7 +69,7 @@ const moreQuestions = {
         "Add an employee?",
         "Add an engineer?",
         "Add an intern?",
-        "Build and render team to HTML?",
+        "Finish building and render team to HTML?",
     ]
 };
 
@@ -198,5 +198,31 @@ function getInternInfo() {
     })
 }
 
-getManagerInfo()
-Footer
+
+// If you finishes building his/her team, the application will exit and the HTML file will be generated.
+
+if(answer.choice === "Finish building and render team to HTML?"){
+        
+    createTeam();
+    console.log ("team is ready")
+}
+
+
+// * Call the `render` function (provided for you) and pass in an array containing all employee objects; 
+// * The `render` function will generate and return a block of HTML including templated divs for each employee!
+
+function createTeam() {
+if (!fs.existsSync(OUTPUT_DIR)) {
+fs.mkdirSync(OUTPUT_DIR);
+} 
+
+
+fs.writeFileSync(outputPath, render(employees), 'utf-8');
+console.log('team.html file created in the output folder');
+
+}
+
+}
+)}
+
+init();
