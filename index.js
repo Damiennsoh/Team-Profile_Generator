@@ -51,7 +51,7 @@ const teamManagerQuestions = [
         message: "What is the team manager's office number?",
         validate: function(answer){
             if (answer.length < 10){
-                return console.log("email is invalid please type again")
+                return console.log("Number is invalid please type again")
 
             }
             return true;
@@ -66,7 +66,7 @@ const moreQuestions = {
     name: 'addMembers',
     message: 'Are there more members to be added to the team?',
     choices: [
-        "Add an employee?",
+
         "Add an engineer?",
         "Add an intern?",
         "Finish building and render team to HTML?",
@@ -201,7 +201,7 @@ function getInternInfo() {
 
 // If you finishes building his/her team, the application will exit and the HTML file will be generated.
 
-if(answer.choice === "Finish building and render team to HTML?"){
+if(moreQuestions.choices === "Finish building and render team to HTML?"){
         
     createTeam();
     console.log ("team is ready")
@@ -216,13 +216,9 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 fs.mkdirSync(OUTPUT_DIR);
 } 
 
-
 fs.writeFileSync(outputPath, render(employees), 'utf-8');
 console.log('team.html file created in the output folder');
 
 }
 
-}
-)}
-
-init();
+getManagerInfo()
