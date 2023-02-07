@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
+const { error } = require("console");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -47,7 +48,7 @@ const teamManagerQuestions = [
     {
         // manager's phone number
         type: 'input',
-        name: 'managerPhoneNumber',
+        name: 'officeNumber',
         message: "What is the team manager's office number?",
         validate: function(answer){
             if (answer.length < 10){
@@ -75,7 +76,7 @@ const moreQuestions = {
 
 //Assuming adding an engineer as a team member is chosen as a choice
 // Array of questions for engineer
-const engineerQuestions =[
+const engineerQuestions = [
     {
         //Inputs for engineer's name
         type: 'input',
@@ -152,18 +153,19 @@ function getManagerInfo() {
 }
 // Function to call more question to determine whether more team members are to be added or building the team is the choice to be made.
 function addEmployees() {
-    return inquirer.prompt(moreQuestions).then((response) => {
-        console.log(response);
+     inquirer.prompt(moreQuestions).then((response) => {
+        console.log("THIS IS RESPONSE: ", response);
+        console.log(response.addMembers)
 
-        if (response.menu === "Add an engineer?") {
+        if (response.addMembers === "Add an engineer?") {
             getEngineerInfo()
         }
-        else if (response.menu === "Add an intern?") {
+        else if (response.addMembers === "Add an intern?") {
             getInternInfo()
         }
         else{
             console.log('Complete!')
-            fs.writeFile(outputPath,render(employees),(err) => err ? console.log("err") : console.log("Success"))
+            fs.writeFile(outputPath,render(employees),(err) => err ? console.error(err): console.log("Success"))
         }
     })
 }
@@ -171,7 +173,7 @@ function addEmployees() {
 // Function to pass engineer response array to Engineer.js 
 
 function getEngineerInfo() {
-    inquirer.prompt(engineersQuestions).then((responseEngineer) => {
+    inquirer.prompt(engineerQuestions).then((responseEngineer) => {
         console.log(responseEngineer);
         employees.push(new Engineer(
             responseEngineer.engineerName,
@@ -201,24 +203,23 @@ function getInternInfo() {
 
 // If you finishes building his/her team, the application will exit and the HTML file will be generated.
 
-if(moreQuestions.choices === "Finish building and render team to HTML?"){
+// if(moreQuestions.choices === "Finish building and render team to HTML?"){
         
-    createTeam();
-    console.log ("team is ready")
-}
+//     createTeam();
+//     console.log ("team is ready")
+// }
 
 
 // * Call the `render` function (provided for you) and pass in an array containing all employee objects; 
 // * The `render` function will generate and return a block of HTML including templated divs for each employee!
 
-function createTeam() {
-if (!fs.existsSync(OUTPUT_DIR)) {
-fs.mkdirSync(OUTPUT_DIR);
-} 
+// function createTeam() {
+// if (!fs.existsSync(OUTPUT_DIR)) {
+// fs.mkdirSync(OUTPUT_DIR);
+// } 
 
-fs.writeFileSync(outputPath, render(employees), 'utf-8');
-console.log('team.html file created in the output folder');
-
-}
+// fs.writeFileSync(outputPath, render(employees), 'utf-8');
+// console.log('team.html file created in the output folder');
+// }
 
 getManagerInfo()
