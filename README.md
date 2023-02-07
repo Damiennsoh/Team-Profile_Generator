@@ -13,6 +13,9 @@ This application is developed throught the use of Node.js.
 * Deployed Link:
 * Technology Used:
 * Contributors:
+* code snippet:
+* jest passing(screenshot)
+* screenshot of deployed site:
 * License:
 * Contacts:
 
