@@ -15,3 +15,34 @@ This application is developed throught the use of Node.js.
 * Contributors:
 * License:
 * Contacts:
+
+## Installation:
+This application does not requre the traditional installation type, it use node.js to generate and render an employee team an output directory that will contain the generated HTML file.
+It does this by running node index.js on the command line interface of the vscode terminal or of any code editor terminal, which then prompts a series of questions regard the particular team member you want to render on the HTML file.
+
+## Usage:
+It is used to quickly generate and render team members of a company on an HTML file.
+
+## Credits:
+* Trilogy Bootcamp
+* Phil Howkley
+
+## Deployed link:
+
+## Technology used:
+* Nodejs
+* CSS
+* HTML
+* JavaScript
+* Inquirer
+* Jest
+
+## Contributors:
+N/A
+
+##  License:
+* Refer to the MIT license in the repository
+*
+## Contacts:
+* Github username: Damiennsoh
+* Email: psycaro20@gmail.com
