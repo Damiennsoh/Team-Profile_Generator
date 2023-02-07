@@ -41,11 +41,11 @@ It is used to quickly generate and render team members of a company on an HTML f
 ## Contributors:
 N/A
 
-## Code Snippet:
-![image]()
+## jest passing:
+![image](https://github.com/Damiennsoh/Team-Profile_Generator/blob/main/assets/team-profile.jpg)
 
 ## Screenshot of deployed page:
-![image]()
+![image](https://github.com/Damiennsoh/Team-Profile_Generator/blob/main/assets/myteam.jpg)
 
 ##  License:
 * Refer to the MIT license in the repository
