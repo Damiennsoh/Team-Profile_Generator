@@ -161,12 +161,12 @@ function addEmployees() {
         else if (response.menu === "Add an intern?") {
             getInternInfo()
         }
-        else{
-            console.log('Complete!')
-            fs.writeFile(outputPath,render(employees),(err) => err ? console.log("err") : console.log("Success"))
-        }
-    })
-}
+//         else{
+//             console.log('Complete!')
+//             fs.writeFile(outputPath,render(employees),(err) => err ? console.log("err") : console.log("Success"))
+//         }
+//     })
+// }
 
 // Function to pass engineer response array to Engineer.js 
 
@@ -199,7 +199,7 @@ function getInternInfo() {
 }
 
 
-// If you finishes building his/her team, the application will exit and the HTML file will be generated.
+If user finishes building his/her team, the application will exit and the HTML file will be generated.
 
 if(moreQuestions.choices === "Finish building and render team to HTML?"){
         
@@ -208,8 +208,8 @@ if(moreQuestions.choices === "Finish building and render team to HTML?"){
 }
 
 
-// * Call the `render` function (provided for you) and pass in an array containing all employee objects; 
-// * The `render` function will generate and return a block of HTML including templated divs for each employee!
+* Call the `render` function (provided for you) and pass in an array containing all employee objects; 
+* The `render` function will generate and return a block of HTML including templated divs for each employee!
 
 function createTeam() {
 if (!fs.existsSync(OUTPUT_DIR)) {
