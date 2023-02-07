@@ -55,7 +55,6 @@ N/A
 
 ##  License:
 * Refer to the MIT license in the repository
-*
 ## Contacts:
 * Github username: Damiennsoh
 * Email: psycaro20@gmail.com
