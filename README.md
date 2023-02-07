@@ -28,6 +28,7 @@ It is used to quickly generate and render team members of a company on an HTML f
 * Phil Howkley
 
 ## Deployed link:
+* https://damiennsoh.github.io/Team-Profile_Generator/
 
 ## Technology used:
 * Nodejs
@@ -39,6 +40,12 @@ It is used to quickly generate and render team members of a company on an HTML f
 
 ## Contributors:
 N/A
+
+## Code Snippet:
+![image]()
+
+## Screenshot of deployed page:
+![image]()
 
 ##  License:
 * Refer to the MIT license in the repository
