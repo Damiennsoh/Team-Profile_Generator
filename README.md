@@ -42,7 +42,7 @@ It is used to quickly generate and render team members of a company on an HTML f
 N/A
 
 ## jest passing:
-![image]()
+![image](https://github.com/Damiennsoh/Team-Profile_Generator/blob/main/assets/team-profile.jpg)
 
 ## Screenshot of deployed page:
 ![image](https://github.com/Damiennsoh/Team-Profile_Generator/blob/main/assets/myteam.jpg)
