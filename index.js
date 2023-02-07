@@ -199,3 +199,4 @@ function getInternInfo() {
         addEmployees()
     })
 }
+getManagerInfo()
