@@ -13,6 +13,9 @@ This application is developed throught the use of Node.js.
 * Deployed Link:
 * Technology Used:
 * Contributors:
+* code snippet:
+* jest passing(screenshot)
+* screenshot of deployed site:
 * License:
 * Contacts:
 
@@ -41,6 +44,9 @@ It is used to quickly generate and render team members of a company on an HTML f
 ## Contributors:
 N/A
 
+## Code Snippet:
+* ![image](https://github.com/Damiennsoh/Team-Profile_Generator/blob/main/assets/nodejs%20code%20snippet.jpg)
+
 ## jest passing:
 ![image](https://github.com/Damiennsoh/Team-Profile_Generator/blob/main/assets/team-profile.jpg)
 
@@ -49,7 +55,6 @@ N/A
 
 ##  License:
 * Refer to the MIT license in the repository
-*
 ## Contacts:
 * Github username: Damiennsoh
 * Email: psycaro20@gmail.com
